@@ -14,6 +14,7 @@ const LoginPage = () => {
 
     if (dataEmail === "test@gmail.com" && dataPassword === "test123") {
       alert("Login Success");
+      setIsLogin(true);
       Navigate("/");
     } else {
       alert("Login Gagal");

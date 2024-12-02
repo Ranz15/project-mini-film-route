@@ -6,7 +6,7 @@ import LoginPage from "../component/Layout/Login";
 
 export const MovieContext = createContext("");
 
-export const MainPage = () => {
+export const MainProvider = ({ children }) => {
   // React Hooks
   // useState untuk menyimpan data movies sementara
   const [movieList, setMovieList] = useState([]);
@@ -25,10 +25,18 @@ export const MainPage = () => {
           setInfoMovie,
         }}
       >
-        <NavbarMovie />
-        <CaroselMovie />
-        <CardMovieList />
+        {children}
       </MovieContext.Provider>
+    </>
+  );
+};
+
+export const MainPage = () => {
+  return (
+    <>
+      <NavbarMovie />
+      <CaroselMovie />
+      <CardMovieList />
     </>
   );
 };

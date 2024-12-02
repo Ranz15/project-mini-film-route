@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MovieContext } from "../../Context/Main";
+import { Link } from "react-router";
 
 const CaroselMovie = () => {
   // useContext untuk menggunakan/mengambil state secara global
@@ -11,13 +12,13 @@ const CaroselMovie = () => {
           return (
             <>
               <div className="carousel-item" key={i}>
-                <a href="">
+                <Link to={`detail/${movie.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={movie.title}
                     width="200px"
                   />
-                </a>
+                </Link>
               </div>
             </>
           );

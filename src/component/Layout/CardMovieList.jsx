@@ -25,7 +25,7 @@ const CardMovieList = () => {
         {movieList.map((movie, i) => {
           return (
             <>
-              <div className="" key={i}>
+              <div className="" key={movie.id}>
                 <div className="card card-side bg-base-100 shadow-xl mx-3 w-[520px]">
                   <figure>
                     <Link to={`detail/${movie.id}`}>
@@ -42,7 +42,9 @@ const CardMovieList = () => {
                     <p>Release Movie : {movie.release_date}</p>
                     <p>Vote Movie : {movie.vote_average}</p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Detail</button>
+                      <Link to={`detail/${movie.id}`}>
+                        <button className="btn btn-primary">Detail</button>
+                      </Link>
                     </div>
                   </div>
                 </div>

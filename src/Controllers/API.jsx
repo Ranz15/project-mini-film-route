@@ -17,10 +17,10 @@ const searchMovie = async (e) => {
   return search.data;
 };
 
-const detailMovie = async (e) => {
+const detailMovie = async (id) => {
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/1241982",
+    url: `${baseURL}/movie/${id}`,
     params: { language: "en-US" },
     headers: {
       accept: "application/json",

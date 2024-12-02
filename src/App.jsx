@@ -1,5 +1,5 @@
 import { getMovies, searchMovie } from "./Controllers/API";
-import { MainPage } from "./Context/Main";
+import { MainPage, MainProvider } from "./Context/Main";
 import { BrowserRouter, Routes, Route } from "react-router";
 import LoginPage from "./component/Layout/Login";
 import { DetailMovie } from "./component/Layout/DetailMovie";
@@ -16,11 +16,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route index element={<MainPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="detail/:id" element={<DetailMovie />} />
-        </Routes>
+        <MainProvider>
+          <Routes>
+            <Route index element={<MainPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="detail/:id" element={<DetailMovie />} />
+          </Routes>
+        </MainProvider>
       </BrowserRouter>
     </>
   );
