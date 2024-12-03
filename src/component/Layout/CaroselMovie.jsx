@@ -7,7 +7,7 @@ const CaroselMovie = () => {
   const { movieList, setMovieList } = useContext(MovieContext);
   return (
     <>
-      <div className="carousel rounded-box mx-3">
+      <div className="carousel rounded-box mx-3 my-2">
         {movieList.map((movie, i) => {
           return (
             <>

@@ -1,6 +1,7 @@
 import { useContext, useRef } from "react";
 import { Navigate, useNavigate } from "react-router";
 import { MovieContext } from "../../Context/Main";
+import NavbarMovie from "./Navbar";
 
 const LoginPage = () => {
   const form = useRef();
@@ -24,6 +25,7 @@ const LoginPage = () => {
 
   return (
     <>
+      <NavbarMovie />
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">

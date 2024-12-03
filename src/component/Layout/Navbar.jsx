@@ -17,11 +17,19 @@ const NavbarMovie = () => {
       setMovieList(query.results);
     }
   };
+
+  // Handle Login dan Logout
+  const handleLogin = () => {
+    setIsLogin((login) => !login);
+  };
+
   return (
     <>
-      <div className="navbar bg-neutral text-neutral-content mb-2">
+      <div className="navbar bg-neutral text-neutral-content">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">RanzMovie</a>
+          <Link to={"/"} className="btn btn-ghost text-xl">
+            RanzMovie
+          </Link>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
@@ -53,8 +61,18 @@ const NavbarMovie = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to="/login" className="text-blue-300">
+                <Link
+                  to="/login"
+                  className={!isLogin ? "text-blue-300" : "text-red-300"}
+                  onClick={handleLogin}
+                >
                   {!isLogin ? "Login" : "Logout"}
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/login" className="text-blue-200">
+                  {isLogin ? "Favorite" : ""}
                 </Link>
               </li>
             </ul>

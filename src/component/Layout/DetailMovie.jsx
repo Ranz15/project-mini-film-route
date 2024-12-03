@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { detailMovie } from "../../Controllers/API";
 import { MovieContext } from "../../Context/Main";
+import NavbarMovie from "./Navbar";
 
 export const DetailMovie = () => {
   const { infoMovie, setInfoMovie } = useContext(MovieContext);
@@ -27,6 +28,7 @@ export const DetailMovie = () => {
 
   return (
     <>
+      <NavbarMovie />
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <img

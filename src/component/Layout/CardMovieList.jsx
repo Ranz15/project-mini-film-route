@@ -16,6 +16,11 @@ const CardMovieList = () => {
 
   // console.log({ Movie: movieList });
 
+  // handleFavorit
+  const handleFavorit = () => {
+    console.log("favorit cuy");
+  };
+
   return (
     <>
       <div className="flex items-center justify-center">
@@ -45,6 +50,12 @@ const CardMovieList = () => {
                       <Link to={`detail/${movie.id}`}>
                         <button className="btn btn-primary">Detail</button>
                       </Link>
+                      <button
+                        className="btn btn-primary"
+                        onClick={handleFavorit}
+                      >
+                        Favorit
+                      </button>
                     </div>
                   </div>
                 </div>
