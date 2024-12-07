@@ -5,7 +5,8 @@ import { Link } from "react-router";
 
 const CardMovieList = () => {
   // useContext untuk menggunakan/mengambil state secara global
-  const { movieList, setMovieList } = useContext(MovieContext);
+  const { movieList, setMovieList, favoritMovie, setFavoritMovie } =
+    useContext(MovieContext);
 
   // useEffect untuk action fetching data sesudah render page
   useEffect(() => {
@@ -16,9 +17,17 @@ const CardMovieList = () => {
 
   // console.log({ Movie: movieList });
 
-  // handleFavorit
-  const handleFavorit = () => {
-    console.log("favorit cuy");
+  // Add favorit movie
+  const addFavorit = (movie) => {
+    setFavoritMovie([
+      ...favoritMovie,
+      {
+        id: movie.id,
+        title: movie.title,
+        date: movie.release_date,
+        vote: movie.vote_average,
+      },
+    ]);
   };
 
   return (
@@ -30,8 +39,11 @@ const CardMovieList = () => {
         {movieList.map((movie, i) => {
           return (
             <>
-              <div className="" key={movie.id}>
-                <div className="card card-side bg-base-100 shadow-xl mx-3 w-[520px]">
+              <div className="">
+                <div
+                  className="card card-side bg-base-100 shadow-xl mx-3 w-[520px]"
+                  key={movie.id}
+                >
                   <figure>
                     <Link to={`detail/${movie.id}`}>
                       <img
@@ -52,7 +64,12 @@ const CardMovieList = () => {
                       </Link>
                       <button
                         className="btn btn-primary"
-                        onClick={handleFavorit}
+                        onClick={addFavorit({
+                          id: movie.id,
+                          title: movie.title,
+                          date: movie.release_date,
+                          vote: movie.vote_average,
+                        })}
                       >
                         Favorit
                       </button>

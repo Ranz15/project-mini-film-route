@@ -12,6 +12,7 @@ export const MainProvider = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
   const [infoMovie, setInfoMovie] = useState([]);
+  const [favoritMovie, setFavoritMovie] = useState([]);
 
   return (
     <>
@@ -23,6 +24,8 @@ export const MainProvider = ({ children }) => {
           setIsLogin,
           infoMovie,
           setInfoMovie,
+          favoritMovie,
+          setFavoritMovie,
         }}
       >
         {children}
