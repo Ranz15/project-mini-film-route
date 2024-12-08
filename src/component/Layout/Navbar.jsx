@@ -71,7 +71,7 @@ const NavbarMovie = () => {
               </li>
 
               <li>
-                <Link to="/login" className="text-blue-200">
+                <Link to="/favorite" className="text-blue-200">
                   {isLogin ? "Favorite" : ""}
                 </Link>
               </li>

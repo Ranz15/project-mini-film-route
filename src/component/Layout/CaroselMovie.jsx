@@ -8,19 +8,17 @@ const CaroselMovie = () => {
   return (
     <>
       <div className="carousel rounded-box mx-3 my-2">
-        {movieList.map((movie, i) => {
+        {movieList.map((movie) => {
           return (
-            <>
-              <div className="carousel-item" key={i}>
-                <Link to={`detail/${movie.id}`}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt={movie.title}
-                    width="200px"
-                  />
-                </Link>
-              </div>
-            </>
+            <div className="carousel-item" key={movie.id}>
+              <Link to={`detail/${movie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={movie.title}
+                  width="200px"
+                />
+              </Link>
+            </div>
           );
         })}
       </div>

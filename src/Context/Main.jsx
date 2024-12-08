@@ -14,6 +14,8 @@ export const MainProvider = ({ children }) => {
   const [infoMovie, setInfoMovie] = useState([]);
   const [favoritMovie, setFavoritMovie] = useState([]);
 
+  // console.log(favoritMovie);
+
   return (
     <>
       <MovieContext.Provider

@@ -3,6 +3,7 @@ import { MainPage, MainProvider } from "./Context/Main";
 import { BrowserRouter, Routes, Route } from "react-router";
 import LoginPage from "./component/Layout/Login";
 import { DetailMovie } from "./component/Layout/DetailMovie";
+import FavoritPage from "./component/Layout/Favorite";
 
 function App() {
   // function untuk handler search movie
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<MainPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="detail/:id" element={<DetailMovie />} />
+            <Route path="favorite" element={<FavoritPage />} />
           </Routes>
         </MainProvider>
       </BrowserRouter>
